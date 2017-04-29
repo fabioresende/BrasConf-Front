@@ -1,0 +1,11 @@
+<ul class="clientes">
+    <li *ngFor="let cliente of clientes" (click)="onSelect(cliente)">
+        <span class="badge">{{cliente.id}}</span> {{cliente.name}}
+    </li>
+</ul>
+<div *ngIf="selectedCliente">
+    <h2>
+        {{selectedCliente.name | uppercase}} é meu cliente
+    </h2>
+    <button (click)="gotoDetail()">Detalhar</button>
+</div>
